@@ -1,6 +1,6 @@
 # Project X Website
 
-Welcome Project X Website.
+Welcome the Great Reads Website. This is a full stack website that allows users to manage a common dataset of book reviews. It contains a well designed relational database with a structure that allows users to store and manipulate data records about book reviews. This database allows users CRUD functionality, meaning they can create, locate, display, edit and delete records from the database. The website has a main navigation system and a structured layout. The website was built using HTML, CSS, JavaScript and Python. A number of frameworks and libraries including Flask, PostgreSQL and Materlialize were used in the creation of this project. Full details and attribution can be found in the Technologies and Credits sections, further down this documentation.
 
 A live version of the site can be viewed from [here.](#)
 
@@ -10,44 +10,62 @@ Here is an image of the website, using the "Am I Responsive" site, showing what 
 ### Colour Scheme
 
 The colours used for the website are listed below:
-- One
-- Two
-- Three
+- #000000 Black
+- #A80808 Red
+- #F29727 Gold
+- #FFFFFF White
 
-I chose these colours because...
-
-I used this colour contrast checker []() to check that there was enough contrast between the colour of the text and the background colours.
+I chose these colours because they are eye catching but also provide a high contrast, making it easy for the users to read the content. This is particularly important given that this is a website about reading. The online colour contrast checker [WebAIM](https://webaim.org/resources/contrastchecker/) was used to varify the contrast between the colours chosen.
 
 ### Typography
 
 The fonts used for the website are listed below:
-- One
-- Two
+- Kaushan [Google Fonts](https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap)
+- Caveat [Google Fonts](https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Margarine&display=swap)
 - Three
 
-I chose these fonts because...
+The heading fonts were chosen because they look a little bit like handwriting, as this is supposed to make the reader feel more like writing their own reviews.
+The main script font was kept as simple as possible to ensure the easiest reading experience for the user.
+
+### Database Structure
+
+The relational database built into this project is designed to suit its function. Below is a description fo the database:
+
+It contains a Books table. In the Books table, each book only has one number, one title, one author, and one number of votes affiliated with it. The number in the Votes column can be updated.
+
+| Book_Number | Title | Author | Votes |
+| --- | --- | --- | --- |
+
+It contains a second, much larger related table, related to the first by Book_Number. This is the Reviews table. In the Reviews table, there can be many Reviews for the same book, but each review only has one Review_Author, one Last_Date_Edited and one Review_Number. Entries in the Review column and the Last_Date_Edited column can be updated. Entire rows of this table can be added and deleted.
+
+| Book_Number | Review | Review_Author | Last_Date_Edited | Review_Number |
+| --- | --- | --- | --- | --- |
+
+It contains a third table, related to the second table by Review_Number. This is the Comments table. In the Comments table, there can be many Comments for each review, but each comment only has one Comment_Author, one Comment_Date and one Comment_Number. Entire rows of this column can be added and deleted by users.
+
+| Review_Number | Comment | Comment_Author | Comment_Number |
 
 ## User Stories
 
 ### New Site Users
 
-- As a new site user, I would like to be able to #
-- As a new site user, I would like to be able to #
+- As a new site user, I would like to be able to find reviews of books I am interested in.
+- As a new site user, I would like to be able to read reviews of books I am interested in.
 
 ### Returning Site Users
 
-- As a returning site user, I would like to be able to #
-- As a returning site user, I would like to be able to #
+- As a returning site user, I would like to be able to write and add book reviews of my own.
+- As a returning site user, I would like to be able to quickly rate books that have already been reviewed by other people.
 
 ### Site Admin
 
-- As a site administrator, I would like to be able to #
-- As a site administrator, I would like to be able to #
+- As a site administrator, I would like to be able to easily manage the database contained within the website.
+- As a site administrator, I would like to be able to read and write book reviews as a site user.
 
 ### Site Owner
 
-- As a site owner, I would like to be able to #
-- As a site owner, I would like to be able to #
+- As a site owner, I would like to be able to make money from people looking to buy books recommended by this website.
+- As a site owner, I would like to be able to read and write book reviews as a site user.
 
 ## Wireframes
 
@@ -63,22 +81,26 @@ I chose these fonts because...
 ### Existing Features
 
 Special features of this website:
-- One
-- Two
-- Three
+- Users are able to create and upload their own book reviews to the relational database.
+- Users are able to edit and delete their own book reviews in the relational database.
+- Users are able to find and read book reviews that are already on the relational database.
+- Users are able to upvote and comment on book reviews that are already on the relational database.
 
 ### Future Features
 
 Features I would like to add to this website:
-- One
-- Two
-- Three
-
+- Links to websites selling each book that is reviewed, such that the site owner could conceivably earn money from people looking to buy the books.
 
 ## Technologies Used
 
-- [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
-- [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
+- [HTML](https://en.wikipedia.org/wiki/HTML) programming language used for the front end.
+- [CSS](https://en.wikipedia.org/wiki/CSS) programming language used for the front end.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) programming language used for front end functionality.
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) programming language used for back end functionality.
+- [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) a Python framework used for back end functionality.
+- [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) relationational database management system used for managing the databases.
+- [Git](https://en.wikipedia.org/wiki/Git) version control system used for version control.
+- [Materialize](https://materializecss.com/) css and javaScript framework used for complex components such as the main navigation menu. 
 
 ## Tools Used
 
